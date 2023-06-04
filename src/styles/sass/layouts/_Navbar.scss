@@ -1,0 +1,211 @@
+.navigation {
+  height: $navbar-height;
+  background: transparent;
+  color: $color-grey-dark-3;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  border-bottom: 1px solid $color-grey-light-2;
+  box-shadow: 0 1px 5px $color-grey-light-2;
+
+  &__content {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+    @include breakpoint(md) {
+      padding: 0 $spacing-lg;
+    }
+    transition: all 0.3s ease;
+
+    height: 100%;
+    display: flex;
+    align-items: center;
+
+    & > div {
+      flex: 1;
+      white-space: nowrap;
+
+      &:nth-child(2) {
+        display: flex;
+        justify-content: flex-end;
+        height: 100%;
+
+        margin-right: $spacing-md;
+      }
+      &:last-of-type {
+        display: flex;
+        justify-content: flex-end;
+        flex: 0;
+      }
+    }
+  }
+  &__button__container {
+    display: none;
+    @include breakpoint(md) {
+      display: initial;
+    }
+  }
+  &__toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include breakpoint(md) {
+      display: none;
+    }
+    & > svg {
+      display: block;
+      font-size: 32px;
+    }
+  }
+}
+
+.nav {
+  width: 100%;
+  position: fixed;
+  top: $navbar-height;
+  right: -100%;
+  background: rgba($color-grey-dark-2, 0.8);
+  text-align: center;
+  padding: $spacing-md 0;
+  transition: 0.2s ease;
+
+  &--open {
+    transition: right 0.2s ease;
+    right: 0;
+  }
+
+  &__item {
+    display: block;
+    width: 30%;
+    margin: 0 auto;
+    text-align: center;
+    padding: $spacing-md;
+    border: transparent;
+    font-size: 2rem;
+    color: $color-black;
+    height: 100%;
+    transition: 0.3s;
+    &:hover {
+      color: $color-white;
+      border-bottom: 1px solid $color-grey-light-2;
+    }
+  }
+  @include breakpoint(md) {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: initial;
+    width: auto;
+    padding: 0;
+
+    &__item {
+      padding: 0 $spacing-lg;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__button__container {
+    @include breakpoint(md) {
+      display: none;
+    }
+    padding: $spacing-md;
+  }
+}
+.logo {
+  font-size: 2rem;
+  font-weight: 400;
+  transition: 0.3s ease;
+  &__lg {
+    display: none;
+    color: $color-grey-dark-3;
+    @include breakpoint(md) {
+      display: block;
+    }
+    &__initial {
+      font-weight: bold;
+      color: $color-link;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+    }
+  }
+
+  &__sm {
+    display: flex;
+    text-align: center;
+    justify-content: flex-end;
+    color: $color-grey-dark-3;
+    letter-spacing: -0.6rem;
+    font-weight: bold;
+    color: $color-link;
+    font-size: 3rem;
+    text-transform: uppercase;
+    @include breakpoint(md) {
+      display: none;
+    }
+  }
+}
+.signingToggler {
+  position: fixed;
+  width: 100%;
+  right: 0;
+  height: $navbar-height;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 2000;
+  background-color: $color-grey-light-2;
+  border-bottom: 1px solid $color-grey-dark-2;
+
+  &__group {
+    margin: 1rem auto;
+    width: 85%;
+    &--text {
+      display: flex;
+      font-size: 2rem;
+      text-align: left;
+      justify-content: space-between;
+    }
+    &--link {
+      right: 0;
+      font-size: 2rem;
+      color: $color-link;
+      float: right;
+      cursor: pointer;
+    }
+  }
+  @include breakpoint(md) {
+    width: 45rem;
+  }
+  &--open {
+    visibility: visible;
+    opacity: 1;
+  }
+  &__signIn {
+    position: fixed;
+    font-size: 2rem;
+    top: 2.5rem;
+    right: 1rem;
+    cursor: pointer;
+  }
+  &__logo {
+    display: flex;
+    text-align: center;
+    padding: 1rem 0;
+    justify-content: center;
+    letter-spacing: -0.6rem;
+    font-weight: bold;
+    color: $color-link;
+    font-size: 3rem;
+    text-transform: uppercase;
+    @include breakpoint(md) {
+      justify-content: start;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.scrolled {
+  background-color: $color-grey-light-3;
+  height: 10rem;
+}

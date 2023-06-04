@@ -1,0 +1,45 @@
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: $color-grey-dark-3;
+}
+.heading-primary {
+  color: inherit;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 1rem;
+  &--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease-out;
+    @include breakpoint(md) {
+      margin-bottom: 4rem;
+    }
+  }
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1.5rem;
+    margin-bottom: 0;
+    animation: moveInRight 1s ease-out;
+  }
+}
+
+.heading-secondary {
+  display: flex;
+  font-size: 1.5rem;
+  letter-spacing: $spacing-ltt;
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+.heading-tertiary {
+  display: flex;
+  font-size: $default-font-size-lg;
+  letter-spacing: $spacing-ltt;
+  text-transform: uppercase;
+}
